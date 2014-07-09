@@ -6,8 +6,9 @@
 // @include https://www.youtube.com/
 // @name Youtube Cleaner
 // @namespace kgnc
-// @version 1.2.1
+// @version 1.2.2
 // @grant none
+// @downloadURL https://raw.githubusercontent.com/SeriousBug/yt-cleaner/master/YoutubeCleaner.user.js
 // ==/UserScript==
 
 /*
