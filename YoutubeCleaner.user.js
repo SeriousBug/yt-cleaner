@@ -40,7 +40,7 @@ for (;popularLength >= 0;popularLength--){
 }
 
 //Recommended channels
-subButtons = document.getElementsByClassName("shelf-subscription-button yt-uix-button-subscription-container");
+subButtons = document.getElementsByClassName("yt-uix-subscription-button");
 buttonLength = subButtons.length - 1;
 for (;buttonLength >= 0;buttonLength--){
 	subButtons[buttonLength].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "None";
