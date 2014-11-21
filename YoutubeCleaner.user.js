@@ -6,7 +6,7 @@
 // @include https://www.youtube.com/
 // @name Youtube Cleaner
 // @namespace kgnc
-// @version 1.2.3
+// @version 2.0.0
 // @grant none
 // @downloadURL https://raw.githubusercontent.com/SeriousBug/yt-cleaner/master/YoutubeCleaner.user.js
 // ==/UserScript==
@@ -30,21 +30,15 @@
 	or <https://www.gnu.org/licenses/gpl.html>.
 */
 
-//Recommended and Popular
-popular = document.getElementsByClassName("branded-page-module-title-text");
-popularLength = popular.length - 1;
-for (;popularLength >= 0;popularLength--){
-	if ((popular[popularLength].innerHTML.indexOf("Recommended") != -1) || (popular[popularLength].innerHTML.indexOf("Popular on YouTube") != -1)){
-			popular[popularLength].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "None";
-	}
+
+//All annotations
+annotations = document.getElementsByClassName("shelf-annotation shelf-title-annotation");
+annotationsLength = annotations.length - 1;
+for (;annotationsLength >= 0;annotationsLength--){
+    annotations[annotationsLength].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "None";
 }
 
-//Recommended channels
-subButtons = document.getElementsByClassName("yt-uix-subscription-button");
-buttonLength = subButtons.length - 1;
-for (;buttonLength >= 0;buttonLength--){
-	subButtons[buttonLength].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "None";
-}
-
-//Recommended channels column on the right
-document.getElementsByClassName("branded-page-related-channels branded-page-box ")[0].style.display = "None";
+//Try to disable auto-loading of the page
+document.getElementsByClassName("yt-uix-load-more")[0].setAttribute("data-uix-load-more-href", "");
+document.getElementsByClassName("yt-uix-load-more")[0].setAttribute("data-scrolldetect-callback", "");
+document.getElementsByClassName("yt-uix-load-more")[0].style.display="None";
