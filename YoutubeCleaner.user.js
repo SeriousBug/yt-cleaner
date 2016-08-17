@@ -33,9 +33,14 @@
 
 //All annotations
 annotations = document.getElementsByClassName("shelf-annotation shelf-title-annotation");
-annotationsLength = annotations.length - 1;
-for (;annotationsLength >= 0;annotationsLength--){
-    annotations[annotationsLength].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "None";
+for (i = 0; i < annotations.length; i++) {
+    annotations[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "None";
+}
+
+//Featured badge
+featured = document.getElementsByClassName("shelf-featured-badge");
+for (i = 0; i < featured.length; i++) {
+    featured[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "None";
 }
 
 //Try to disable auto-loading of the page
